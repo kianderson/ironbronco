@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template#, request, redirect, url_for
 
 
 def create_app(test_config=None):
@@ -23,6 +23,12 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
+    # home page
+    @app.route('/')
+    @app.route('/home')
+    def home():
+        return render_template('base.html')
 
     # a simple page that says hello
     @app.route('/hello')
