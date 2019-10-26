@@ -6,8 +6,10 @@ Installation
 After installing Python 3.8, open a terminal within the project directory and install the following to meet the Pipfile requirements:
 
 Pip—
+```csh
 $ sudo easy_install pip
 $ sudo pip install --upgrade pip
+```
 
 Venv and Flask
 python3 -m venv venv
