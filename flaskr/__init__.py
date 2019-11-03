@@ -28,11 +28,21 @@ def create_app(test_config=None):
     @app.route('/')
     @app.route('/home')
     def home():
-        return render_template('base.html')
+        return render_template('index.html')
 
     # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    #@app.route('/hello')
+    #def hello():
+        #return 'Hello, World!'
+
+    # create team
+    @app.route('/createTeam')
+    def createTeam():
+        return render_template('createTeam.html')
+
+    # login
+    @app.route('/login')
+    def login():
+        return render_template('login.html')
 
     return app
