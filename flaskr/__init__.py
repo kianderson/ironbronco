@@ -1,7 +1,12 @@
+#!/usr/bin/env python
+
 import os
 
 from flask import Flask, render_template#, request, redirect, url_for
+#from static import functions as f
 
+def hello():
+    print('hello world')
 
 def create_app(test_config=None):
     # create and configure the app
@@ -26,23 +31,33 @@ def create_app(test_config=None):
 
     # home page
     @app.route('/')
-    @app.route('/home')
+    @app.route('/index.html')
     def home():
+        hello()
         return render_template('index.html')
-
-    # a simple page that says hello
-    #@app.route('/hello')
-    #def hello():
-        #return 'Hello, World!'
 
     # create team
     @app.route('/createTeam')
+    @app.route('/createTeam.html')
     def createTeam():
         return render_template('createTeam.html')
 
     # login
     @app.route('/login')
+    @app.route('/login.html')
     def login():
         return render_template('login.html')
+
+    # login
+    @app.route('/profileBoard')
+    @app.route('/profileBoard.html')
+    def profileBoard():
+        return render_template('profileBoard.html')
+
+    # login
+    @app.route('/register')
+    @app.route('/register.html')
+    def register():
+        return render_template('register.html')
 
     return app
