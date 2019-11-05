@@ -4,9 +4,8 @@ import os
 
 from flask import Flask, render_template#, request, redirect, url_for
 #from static import functions as f
-
-def hello():
-    print('hello world')
+#import static/functions
+#from static import functions.py
 
 def create_app(test_config=None):
     # create and configure the app
@@ -33,7 +32,7 @@ def create_app(test_config=None):
     @app.route('/')
     @app.route('/index.html')
     def home():
-        hello()
+        f.hello()
         return render_template('index.html')
 
     # create team

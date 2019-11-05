@@ -2,6 +2,9 @@
 import requests
 import json
 
+def hello():
+    print('hello world')
+
 # Participant class
 class Participant:
     name = None
@@ -10,7 +13,7 @@ class Participant:
     team = None
     need = None
 
-    def __init__(self, name, email, major, team, need):
+    def __init__(self, name, email, major, team, need): # add password
         self.name = name
         self.email = email
         self.major = major
@@ -40,7 +43,7 @@ class Team:
 
 # ------------------------------------------------------------------------------
 # create team
-
+'''
 # adds class team to db
 def createTeam(teamName, email1, email2, email3):
     # checks if each user is in DATABASE
@@ -150,3 +153,4 @@ def userExists(email):
 
 # ------------------------------------------------------------------------------
 # GET
+'''
